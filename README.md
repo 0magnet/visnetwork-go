@@ -80,3 +80,35 @@ standard library (testify for tests only), which matters for a wasm binary.
 default values, so a configuration copied from a vis-network page works here.
 
 Extracted from [skywire](https://github.com/skycoin/skywire).
+
+## Dependency Graph
+
+Made with [goda](https://github.com/loov/goda):
+
+```
+go run github.com/loov/goda@latest graph github.com/0magnet/visnetwork-go/... | dot -Tsvg -o docs/visnetwork-go-goda-graph.svg
+```
+
+![Dependency Graph](docs/visnetwork-go-goda-graph.svg "github.com/0magnet/visnetwork-go Dependency Graph")
+
+## Lines of Code
+
+Made with [gocloc](https://github.com/hhatto/gocloc) (excludes `vendor/`, `node_modules/`, `.git/`):
+
+```
+gocloc --not-match-d='(vendor|node_modules|\.git)' .
+```
+
+```
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Go                               6            213            213           1040
+Makefile                         1             22             52            111
+YAML                             1              0              7             98
+Markdown                         1             27              0             86
+Bourne Shell                     1              8             17             31
+-------------------------------------------------------------------------------
+TOTAL                           10            270            289           1366
+-------------------------------------------------------------------------------
+```
